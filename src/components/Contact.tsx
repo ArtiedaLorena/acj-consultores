@@ -1,36 +1,9 @@
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 export function Contact() {
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Teléfono",
-      value: "+54 11 4123-4567",
-      description: "Lun a Vie 8:00 - 18:00"
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      value: "info@acjconsultores.com.ar",
-      description: "Respuesta en 24hs"
-    },
-    {
-      icon: MapPin,
-      title: "Oficina Principal",
-      value: "Av. Corrientes 1234, CABA",
-      description: "Buenos Aires, Argentina"
-    },
-    {
-      icon: Clock,
-      title: "Horarios",
-      value: "Lunes a Viernes",
-      description: "8:00 - 18:00 hs"
-    }
-  ];
 
   return (
     <section id="contacto" className="py-20" style={{ backgroundColor: '#f8f9fa' }}>
