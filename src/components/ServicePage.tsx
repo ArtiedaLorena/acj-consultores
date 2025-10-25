@@ -209,7 +209,7 @@ export function ServicePage() {
                     <span>Solicitar Cotización</span>
                   </a>
                   <a
-                    href="https://wa.me/5491112345678"
+                    href="https://wa.me/5491153441139"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 border-2 border-white text-white text-center rounded-lg px-4 py-3 hover:bg-white/10 transition-all duration-200"
