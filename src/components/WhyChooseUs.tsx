@@ -82,23 +82,6 @@ export function WhyChooseUs() {
             className="rounded-2xl p-8 md:p-12 text-center"
             style={{ backgroundColor: '#f8f9fa' }}
           >
-            <div className="max-w-3xl mx-auto">
-              <blockquote className="text-xl md:text-2xl font-medium mb-6" style={{ color: '#0D0D0D' }}>
-                "ACJ Consultores transformó completamente nuestro enfoque de seguridad laboral. 
-                Su profesionalismo y dedicación nos permitió reducir los incidentes en un 95%."
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-12 h-12 rounded-full" style={{ backgroundColor: '#8DBF69' }}></div>
-                <div className="text-left">
-                  <div className="font-semibold" style={{ color: '#027333' }}>
-                    María González
-                  </div>
-                  <div className="text-sm" style={{ color: '#6F7372' }}>
-                    Gerente de RRHH, Industrias del Norte
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
