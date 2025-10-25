@@ -12,10 +12,11 @@ import seven from "./images/seven_plast.png";
 import sios from "./images/sios_sa.gif";
 import surpiel from "./images/surpiel.png";
 import serv from "./images/sew_eurodrive.gif";
+
 export function Clients() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Logos de clientes para el carrusel
+  // Logos del carrusel
   const clientLogos = [
     cormet,
     ias,
@@ -33,10 +34,11 @@ export function Clients() {
 
   const logosPerSlide = 4; // Cantidad de logos por slide
 
+  // 🔹 Logos fijos de la parte superior (usando carpeta /public)
   const stats = [
-    { img: "./images/baliarda.png" },
-    { img: "./images/tandanor.png" },
-    { img: "./images/sitece.png" },
+    { img: "/images/baliarda.png" },
+    { img: "/images/tandanor.png" },
+    { img: "/images/sitece.png" },
   ];
 
   // Auto-scroll del carrusel
@@ -67,23 +69,24 @@ export function Clients() {
             className="text-lg md:text-xl max-w-3xl mx-auto"
             style={{ color: "#6F7372" }}
           >
-            Socios estratégicos de las siguientes empresas,<br></br> que confían en
+            Socios estratégicos de las siguientes empresas,<br /> que confían en
             nosotros como sus proveedores
           </p>
         </div>
 
-        {/* Logos/Estadísticas de arriba */}
+        {/* Logos de arriba */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16 justify-items-center">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-2 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 w-64 h-40"
+              className="flex flex-col items-center justify-center p-4 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 w-64 h-40"
             >
-              <div className="flex items-center justify-center w-50 h-50 mb-4">
+              <div className="flex items-center justify-center w-full h-full">
                 <img
                   src={stat.img}
-                  alt={`Logo ${index}`}
+                  alt={`Logo ${index + 1}`}
                   className="object-contain w-full h-full"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -97,10 +100,12 @@ export function Clients() {
               className="text-lg md:text-xl max-w-3xl mx-auto"
               style={{ color: "#6F7372" }}
             >
-              Empresas que confían en nosotros para proteger a su equipo <br></br>y
+              Empresas que confían en nosotros para proteger a su equipo <br />y
               cumplir con las normativas de seguridad laboral
             </p>
           </div>
+
+          {/* Slides */}
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
@@ -128,6 +133,7 @@ export function Clients() {
                             slideIndex * logosPerSlide + index + 1
                           }`}
                           className="object-contain w-32 h-32 md:w-40 md:h-40"
+                          loading="lazy"
                         />
                       </div>
                     ))}
