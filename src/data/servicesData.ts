@@ -1,11 +1,11 @@
 import { Shield, Users, Microscope, HardHat, ClipboardCheck, Zap } from "lucide-react";
 
-import higieneImg from "../components/images/higiene_seguridad.jpg";
-import evacuacionImg from "../components/images/evacuacion.png";
-import relevamientosImg from "../components/images/mediciones.jpeg";
-import capacitacionImg from "../components/images/capacitacion.jpg";
-import puestaTierraImg from "../components/images/puesta_a_tierra.jpg";
-import equipamientoImg from "../components/images/epp.jpg";
+import higieneImg from "/images/higiene_seguridad.jpg";
+import evacuacionImg from "/images/evacuacion.png";
+import relevamientosImg from "/images/mediciones.jpeg";
+import capacitacionImg from "/images/capacitacion.jpg";
+import puestaTierraImg from "/images/puesta_a_tierra.jpg";
+import equipamientoImg from "/images/epp.jpg";
 
 
 export interface ServiceData {
