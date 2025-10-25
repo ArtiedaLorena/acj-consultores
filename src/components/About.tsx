@@ -1,12 +1,12 @@
 "use client";
 
 import { CheckCircle } from "lucide-react";
-import trainingImage1 from "./images/SI01.jpg";
-import trainingImage4 from "./images/SI04.jpg";
-import trainingImage7 from "./images/SI07.jpg";
-import trainingImage9 from "./images/SI09.jpg";
-import trainingImage11 from "./images/SI11.jpg";
-import trainingImage12 from "./images/SI12.jpg";
+import trainingImage1 from "/images/SI01.jpg";
+import trainingImage4 from "/images/SI04.jpg";
+import trainingImage7 from "/images/SI07.jpg";
+import trainingImage9 from "/images/SI09.jpg";
+import trainingImage11 from "/images/SI11.jpg";
+import trainingImage12 from "/images/SI12.jpg";
 
 export function About() {
   const achievements = [

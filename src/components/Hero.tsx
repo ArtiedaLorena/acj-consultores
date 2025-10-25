@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import bgImage from "./images/industria.jpeg";
+import bgImage from "/images/industria.jpeg";
 
 export function Hero() {
   return (
