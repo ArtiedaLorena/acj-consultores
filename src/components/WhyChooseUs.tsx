@@ -76,15 +76,6 @@ export function WhyChooseUs() {
           })}
         </div>
 
-        {/* Testimonial Section */}
-        <div className="mt-20">
-          <div 
-            className="rounded-2xl p-8 md:p-12 text-center"
-            style={{ backgroundColor: '#f8f9fa' }}
-          >
-          </div>
-        </div>
-
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
