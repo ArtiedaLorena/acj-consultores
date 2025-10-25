@@ -34,9 +34,9 @@ export function Clients() {
   const logosPerSlide = 4; // Cantidad de logos por slide
 
   const stats = [
-    { img: "src/components/images/baliarda.png" },
-    { img: "src/components/images/tandanor.png" },
-    { img: "src/components/images/sitece.png" },
+    { img: "./images/baliarda.png" },
+    { img: "./images/tandanor.png" },
+    { img: "./images/sitece.png" },
   ];
 
   // Auto-scroll del carrusel
