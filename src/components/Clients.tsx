@@ -1,36 +1,50 @@
 import { useEffect, useState } from "react";
 
+import cormet from "./images/cormet_group.png";
+import ias from "./images/ias.png";
+import iveco from "./images/iveco.png";
+import lainco from "./images/lainco_software.png";
+import mercedes from "./images/mercedes_benz.png";
+import mexichem from "./images/mexichem_amanco.jpg";
+import obcitel from "./images/obcitel.png";
+import jma from "./images/perfiles_jma.jpg";
+import seven from "./images/seven_plast.png";
+import sios from "./images/sios_sa.gif";
+import surpiel from "./images/surpiel.png";
+import serv from "./images/sew_eurodrive.gif";
 export function Clients() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Logos de empresas ficticias pero realistas
+  // Logos de clientes para el carrusel
   const clientLogos = [
-    { name: "TechCorp", logo: "TC" },
-    { name: "Industrias del Sur", logo: "IDS" },
-    { name: "Constructora Alpha", logo: "CA" },
-    { name: "Logistics Pro", logo: "LP" },
-    { name: "MetalWorks", logo: "MW" },
-    { name: "FoodTech", logo: "FT" },
-    { name: "BuildMax", logo: "BM" },
-    { name: "TransGlobal", logo: "TG" },
-    { name: "SafeIndustry", logo: "SI" },
-    { name: "EcoManufacturing", logo: "EM" },
-    { name: "PowerPlant Solutions", logo: "PPS" },
-    { name: "ChemLab Industries", logo: "CLI" }
+    cormet,
+    ias,
+    iveco,
+    lainco,
+    mercedes,
+    mexichem,
+    obcitel,
+    jma,
+    seven,
+    sios,
+    surpiel,
+    serv,
   ];
 
+  const logosPerSlide = 4; // Cantidad de logos por slide
+
   const stats = [
-    { number: "50+", label: "Empresas Asesoradas", color: "#027333" },
-    { number: "5+", label: "Años de Experiencia", color: "#8DBF69" },
-    { number: "15+", label: "Sectores Industriales", color: "#027333" },
-    { number: "200+", label: "Trabajadores Capacitados", color: "#8DBF69" }
+    { img: "src/components/images/baliarda.png" },
+    { img: "src/components/images/tandanor.png" },
+    { img: "src/components/images/sitece.png" },
   ];
 
   // Auto-scroll del carrusel
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        (prevIndex + 1) % Math.ceil(clientLogos.length / 6)
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex + 1) % Math.ceil(clientLogos.length / logosPerSlide)
       );
     }, 3000);
 
@@ -38,96 +52,109 @@ export function Clients() {
   }, [clientLogos.length]);
 
   return (
-    <section id="clientes" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section
+      id="clientes"
+      className="py-20 bg-gradient-to-br from-gray-50 to-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            <span style={{ color: '#0D0D0D' }}>Nuestros </span>
-            <span style={{ color: '#027333' }}>Clientes</span>
+            <span style={{ color: "#0D0D0D" }}>Nuestros </span>
+            <span style={{ color: "#027333" }}>Clientes</span>
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto" style={{ color: '#6F7372' }}>
-            Empresas que confían en nosotros para proteger a su equipo y cumplir con las normativas de seguridad laboral.
+          <p
+            className="text-lg md:text-xl max-w-3xl mx-auto"
+            style={{ color: "#6F7372" }}
+          >
+            Socios estratégicos de las siguientes empresas,<br></br> que confían en
+            nosotros como sus proveedores
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {/* Logos/Estadísticas de arriba */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16 justify-items-center">
           {stats.map((stat, index) => (
-            <div 
+            <div
               key={index}
-              className="text-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+              className="flex flex-col items-center justify-center p-2 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 w-64 h-40"
             >
-              <div 
-                className="text-3xl md:text-4xl font-bold mb-2"
-                style={{ color: stat.color }}
-              >
-                {stat.number}
-              </div>
-              <div className="text-sm" style={{ color: '#6F7372' }}>
-                {stat.label}
+              <div className="flex items-center justify-center w-50 h-50 mb-4">
+                <img
+                  src={stat.img}
+                  alt={`Logo ${index}`}
+                  className="object-contain w-full h-full"
+                />
               </div>
             </div>
           ))}
         </div>
 
         {/* Carrusel de Logos */}
-        <div className="relative overflow-hidden bg-white rounded-2xl py-12 shadow-lg">
-          <div 
+        <div className="relative overflow-hidden bg-white rounded-2xl py-6 shadow-lg">
+          <div className="text-center mb-16">
+            <p
+              className="text-lg md:text-xl max-w-3xl mx-auto"
+              style={{ color: "#6F7372" }}
+            >
+              Empresas que confían en nosotros para proteger a su equipo <br></br>y
+              cumplir con las normativas de seguridad laboral
+            </p>
+          </div>
+          <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * 100}%)`
+              transform: `translateX(-${currentIndex * 100}%)`,
             }}
           >
-            {Array.from({ length: Math.ceil(clientLogos.length / 6) }).map((_, slideIndex) => (
+            {Array.from({
+              length: Math.ceil(clientLogos.length / logosPerSlide),
+            }).map((_, slideIndex) => (
               <div key={slideIndex} className="w-full flex-shrink-0 px-8">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-                  {clientLogos.slice(slideIndex * 6, (slideIndex + 1) * 6).map((client, index) => (
-                    <div 
-                      key={index}
-                      className="flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-300 hover:scale-110 cursor-pointer group"
-                    >
-                      <div 
-                        className="w-16 h-16 rounded-lg border-2 flex items-center justify-center mb-3 group-hover:shadow-lg transition-all duration-300 bg-white"
-                        style={{ 
-                          borderColor: index % 2 === 0 ? '#027333' : '#8DBF69'
-                        }}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                  {clientLogos
+                    .slice(
+                      slideIndex * logosPerSlide,
+                      (slideIndex + 1) * logosPerSlide
+                    )
+                    .map((logo, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-center"
                       >
-                        <span className="font-bold text-lg" style={{ color: index % 2 === 0 ? '#027333' : '#8DBF69' }}>
-                          {client.logo}
-                        </span>
+                        <img
+                          src={logo}
+                          alt={`Cliente ${
+                            slideIndex * logosPerSlide + index + 1
+                          }`}
+                          className="object-contain w-32 h-32 md:w-40 md:h-40"
+                        />
                       </div>
-                      <span 
-                        className="text-xs text-center font-medium"
-                        style={{ color: '#6F7372' }}
-                      >
-                        {client.name}
-                      </span>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             ))}
           </div>
-          
+
           {/* Indicadores */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(clientLogos.length / 6) }).map((_, index) => (
+            {Array.from({
+              length: Math.ceil(clientLogos.length / logosPerSlide),
+            }).map((_, index) => (
               <button
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'scale-125' : 'opacity-50'
+                  currentIndex === index ? "scale-125" : "opacity-50"
                 }`}
-                style={{ 
-                  backgroundColor: currentIndex === index ? '#027333' : '#8DBF69'
+                style={{
+                  backgroundColor:
+                    currentIndex === index ? "#027333" : "#8DBF69",
                 }}
                 onClick={() => setCurrentIndex(index)}
               />
             ))}
           </div>
         </div>
-
-
       </div>
     </section>
   );

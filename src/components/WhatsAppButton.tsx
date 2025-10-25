@@ -4,7 +4,7 @@ import { useState } from "react";
 export function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
   
-  const whatsappNumber = "5491123456789"; // Número de ejemplo Argentina (cambiar por el real)
+  const whatsappNumber = "5491153441139"; // Número de ejemplo Argentina (cambiar por el real)
   const message = "Hola! Me interesa conocer más sobre sus servicios de seguridad e higiene laboral.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
