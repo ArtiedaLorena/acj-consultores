@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Facebook,
   Instagram,
@@ -9,6 +10,22 @@ import {
 import logo from "./images/logo_acj.png";
 
 export function Footer() {
+  const navigate = useNavigate();
+
+  // Función para ir al home y hacer scroll a la sección
+  const handleScrollToSection = (id: string) => {
+    if (window.location.pathname === "/") {
+      const section = document.getElementById(id);
+      section?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        section?.scrollIntoView({ behavior: "smooth" });
+      }, 400); // ajustar si tu home tarda más en cargar
+    }
+  };
+
   const socialLinks = [
     {
       icon: Facebook,
@@ -28,11 +45,11 @@ export function Footer() {
   ];
 
   const quickLinks = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "Nosotros", href: "#nosotros" },
-    { name: "Clientes", href: "#contacto" },
-    { name: "Contacto", href: "#contacto" },
+    { name: "Inicio", id: "inicio" },
+    { name: "Servicios", id: "servicios" },
+    { name: "Nosotros", id: "nosotros" },
+    { name: "Clientes", id: "clientes" },
+    { name: "Contacto", id: "contacto" },
   ];
 
   return (
@@ -64,12 +81,12 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200"
                     style={{ backgroundColor: "#A6A6A6" }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#8DBF69";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "#6F7372";
-                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#8DBF69")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#6F7372")
+                    }
                     aria-label={social.label}
                   >
                     <IconComponent size={16} />
@@ -87,18 +104,18 @@ export function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 transition-colors duration-200 text-sm"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#8DBF69";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "#d1d5db";
-                    }}
+                  <button
+                    onClick={() => handleScrollToSection(link.id)}
+                    className="text-gray-300 transition-colors duration-200 text-sm bg-transparent border-none cursor-pointer"
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "#8DBF69")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "#d1d5db")
+                    }
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
